@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pita</title>
+</head>
+<body>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+        .rye-Oswald{
+            font-family: "Oswald",serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        fieldset{
+            min-width: auto;
+        }
+    </style>
+    <h1 class="rye-Oswald">Pitagorasz tétel</h1>
+    <img src="https://www.matekmindenkinek.hu/files/glossary/glossary_30/pitagorasz-tetel.png" width="" alt="">
+    
+<fieldset style="width:200px">
+    <legend>C oldal számítása</legend>
+    <label for="oldalA">A oldal: </label>
+    <input type="text" id="oldalA"><br><br>
+    
+    <label for="oldalB">B oldal: </label>
+    <input type="text" id="oldalB"><br><br>
+<label for="oldalC">C oldal:</label>
+    <input type="text" id="eredmeny" disabled><br><br>
+    <button onclick="szamol()">Számol</button>
+    <button onclick="reset()">Reset</button><br><br>
+  
+    
+  
+</fieldset>
+  <script>
+ function szamol() {
+  var oldalAInput = document.getElementById("oldalA");
+  var oldalBInput = document.getElementById("oldalB");
+  var eredmenyInput = document.getElementById("eredmeny");
+
+  var oldalA = parseFloat(oldalAInput.value);
+  var oldalB = parseFloat(oldalBInput.value);
+
+ 
+  if (isNaN(oldalA) || isNaN(oldalB)) {
+    alert("Kérem töltse ki mindkét mezőt számmal!");
+    return;
+  }
+
+
+  var oldalC = Math.sqrt(oldalA * oldalA + oldalB * oldalB);
+  eredmenyInput.value = oldalC;
+}
+
+function reset() {
+  document.getElementById("oldalA").value = "";
+  document.getElementById("oldalB").value = "";
+  document.getElementById("eredmeny").value = "";
+}
+
+  </script>
+<p>Bármely derékszögű háromszög leghosszabb oldalának (átfogójának) négyzete megegyezik a másik két oldal (a befogók) négyzetösszegével. Tehát: ha egy háromszög derékszögű, akkor a leghosszabb oldalára emelt négyzet területe a másik két oldalra emelt négyzetek területének összegével egyenlő.</p>
+
+</body>
+</html>
